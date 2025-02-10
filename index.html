@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Idle Clicker Car Game</title>
     <style>
+        body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    background: url('https://wallpaperaccess.com/full/1705913.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: white;
+}
         body { font-family: Arial, sans-serif; text-align: center; }
         .car { width: 200px; margin-top: 20px; }
-        .button { font-size: 20px; padding: 10px; margin-top: 10px; }
+        .button {
+    font-size: 22px;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff00ff, #ff6600);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #ff6600, #ff00ff);
+}
     </style>
 </head>
 <body>
