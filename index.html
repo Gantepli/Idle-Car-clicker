@@ -14,25 +14,25 @@
 <body>
     <h1>Idle Clicker Car Game</h1>
     <p>Money: <span id="money">0</span></p>
-    <img id="car" class="car" src="car1.png" alt="Car">
+   <img id="car" class="car" src="Car/car1.png" alt="Car">
     <button class="button" onclick="earnMoney()">Click to Earn Money</button>
     <button class="button" onclick="upgradeCar()">Upgrade Car (Cost: <span id="upgradeCost">50</span>)</button>
 
     <script>
         let money = 0;
-        let upgradeCost = 50;
+        let upgradeCost = 300;
         let carLevel = 1;
 
         function earnMoney() {
             money += 5;
-            document.getElementById("money").innerText = money;
+            document.getElementById("car").src = "Car/car" + carLevel + ".png";
         }
 
         function upgradeCar() {
             if (money >= upgradeCost) {
                 money -= upgradeCost;
                 carLevel++;
-                upgradeCost = Math.floor(upgradeCost * 1.5);
+                upgradeCost = Math.floor(upgradeCost * 2.0);
                 document.getElementById("money").innerText = money;
                 document.getElementById("upgradeCost").innerText = upgradeCost;
                 document.getElementById("car").src = "car" + carLevel + ".png";
