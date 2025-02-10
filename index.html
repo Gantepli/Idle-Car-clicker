@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Clicker Car Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .car { width: 200px; margin-top: 20px; }
+        .button { font-size: 20px; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Idle Clicker Car Game</h1>
+    <p>Money: <span id="money">0</span></p>
+    <img id="car" class="car" src="car1.png" alt="Car">
+    <button class="button" onclick="earnMoney()">Click to Earn Money</button>
+    <button class="button" onclick="upgradeCar()">Upgrade Car (Cost: <span id="upgradeCost">50</span>)</button>
+
+    <script>
+        let money = 0;
+        let upgradeCost = 50;
+        let carLevel = 1;
+
+        function earnMoney() {
+            money += 5;
+            document.getElementById("money").innerText = money;
+        }
+
+        function upgradeCar() {
+            if (money >= upgradeCost) {
+                money -= upgradeCost;
+                carLevel++;
+                upgradeCost = Math.floor(upgradeCost * 1.5);
+                document.getElementById("money").innerText = money;
+                document.getElementById("upgradeCost").innerText = upgradeCost;
+                document.getElementById("car").src = "car" + carLevel + ".png";
+            } else {
+                alert("Not enough money!");
+            }
+        }
+    </script>
+</body>
+</html>
